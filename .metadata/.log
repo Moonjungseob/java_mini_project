@@ -21,3 +21,29 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 4 0 2024-04-19 18:22:15.520
+!MESSAGE Could not delete file C:\Users\it\Documents\java_mini_project1\.metadata\.lock
+!STACK 0
+java.io.IOException: Could not delete file C:\Users\it\Documents\java_mini_project1\.metadata\.lock
+	at org.eclipse.jgit.util.FileUtils.handleDeleteException(FileUtils.java:233)
+	at org.eclipse.jgit.util.FileUtils.delete(FileUtils.java:226)
+	at org.eclipse.jgit.util.FileUtils.delete(FileUtils.java:167)
+	at org.eclipse.egit.ui.internal.repository.tree.command.RemoveCommand.deleteRepositoryContent(RemoveCommand.java:243)
+	at org.eclipse.egit.ui.internal.repository.tree.command.RemoveCommand$1.runInWorkspace(RemoveCommand.java:176)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.nio.file.FileSystemException: C:\Users\it\Documents\java_mini_project1\.metadata\.lock: 다른 프로세스가 파일을 사용 중이기 때문에 프로세스가 액세스 할 수 없습니다
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:92)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:275)
+	at java.base/sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:110)
+	at java.base/java.nio.file.Files.deleteIfExists(Files.java:1191)
+	at org.eclipse.jgit.util.FileUtils.delete(FileUtils.java:219)
+	... 5 more
+
+!ENTRY org.eclipse.core.resources 2 2 2024-04-19 18:30:17.691
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2024-04-19 18:30:17.691
+!MESSAGE The project description file (.project) for 'mini_project' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
